@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FPS Unlocker Pro — 90/120/165 FPS, iPad View & Booster for BGMI / PUBG Mobile</title>
+    <meta name="description" content="FPS Unlocker Pro applies 90, 120 & 165 FPS configurations, iPad View, FPS Booster and SAV Editor profiles for supported BGMI & PUBG Mobile versions. Powered by Shizuku · No root · Free on Google Play." />
+    <meta name="keywords" content="fps unlocker, 90 fps, 120 fps, 165 fps, gfx tool, ipad view, bgmi fps, pubg mobile fps, shizuku, sav editor, fps booster android" />
+    <meta name="theme-color" content="#0a0e14" />
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(window.location.search).get("theme");
+          var s = window.localStorage.getItem("fps-unlocker-theme");
+          var t = q === "light" || q === "dark" ? q : s === "light" || s === "dark" ? s : "dark";
+          document.documentElement.dataset.theme = t;
+          document.documentElement.style.colorScheme = t;
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", t === "light" ? "#f7f9fc" : "#0a0e14");
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FPS Unlocker Pro" />
+    <meta property="og:title" content="FPS Unlocker Pro — Unlock the frames your phone hides" />
+    <meta property="og:description" content="90 / 120 / 165 FPS options, iPad View, FPS Booster & SAV Editor for supported BGMI / PUBG Mobile versions. Powered by Shizuku. No root. Free on Google Play." />
+    <meta property="og:image" content="./favicon.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="FPS Unlocker Pro — 90/120/165 FPS & iPad View" />
+    <meta name="twitter:description" content="No-root GFX utility for supported BGMI / PUBG Mobile versions. Powered by Shizuku. Free on Google Play." />
+    <meta name="twitter:image" content="./favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FPS Unlocker Pro — 90 FPS + 120 FPS Unlocker",
+      "operatingSystem": "Android 11+",
+      "applicationCategory": "UtilitiesApplication",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=tp.fps90",
+      "installUrl": "https://play.google.com/store/apps/details?id=tp.fps90",
+      "softwareVersion": "4.7",
+      "dateModified": "2026-11-16",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "ratingCount": "19117", "bestRating": "5" },
+      "description": "FPS Booster & GFX Tool v4.7 with 90 FPS, 120 FPS, 165 FPS, iPad View, Shizuku Engine and SAV Editor for PUBG Mobile and BGMI 4.7 versions. Actual FPS depends on device, game version and compatibility."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does FPS Unlocker Pro require root?", "acceptedAnswer": { "@type": "Answer", "text": "No. It runs via Shizuku wireless debugging without root access." } },
+        { "@type": "Question", "name": "Will I get 165 FPS on every phone?", "acceptedAnswer": { "@type": "Answer", "text": "No. Available FPS depends on your display refresh rate, hardware, thermals and the installed game version. The app exposes configurations only where they are supported." } },
+        { "@type": "Question", "name": "Which game versions are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Global, Korean, Indian (BGMI), Taiwan, Vietnam, Flash and India Lite configuration sets, refreshed after game updates." } },
+        { "@type": "Question", "name": "Is FPS Unlocker Pro free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, free on Google Play with 1M+ downloads. An optional Premium upgrade removes ads." } }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

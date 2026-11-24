@@ -1,0 +1,47 @@
+# Hostinger Apache / LiteSpeed configuration
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS (supports direct SSL and proxy/Cloudflare SSL)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Route live Play Store stats endpoint to PHP handler
+  RewriteRule ^api/playstore-stats/?$ api/playstore-stats.php [L,QSA]
+
+  # SPA fallback for non-file routes (never intercept real files or /api/)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !(^|/)api/ [NC]
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Browser caching for static media
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
